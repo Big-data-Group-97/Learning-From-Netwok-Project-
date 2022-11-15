@@ -1,0 +1,37 @@
+Rete elettrica --> prendendo la mappa di una rete elettrica nazionale si può notare come 			esistono le varie centrali (Source), e per esempio 375 nodi di smistamento 		(Nodi), e altri nodi definiti dalla cittò con la domanda sarebbe anche 			interessante notare con l'immissione in tadem di energia solare dalle 			abitazioni (ogni nodo per abitazione infeasible, quindi per città avrebbe 		sarebbe più facile).
+
+Definizione astratta -->
+	Type of graph -->
+		- weighted
+		- directed
+		- node properties
+		- flow properties
+	Damage --> 
+		- removing (external node, removing high degree node, Sources untuched)
+		- weight change 
+	Metric -->  
+		- check if some node are unable to get flow
+		- isolation 
+		- value to give importance to high degree node
+
+
+Persistenza --> Capacità di varie reti a resistere a varie tipologie di danni, dato un Grafo G, 	             come è possibile valutare l'impatto di eventuali danni sulla rete e come 		             reagisce, alle perturbazioni ? Reagisce meglio alla rimozione di nodi sparse o 	              close?  Reagisce meglio alla rimozione di nodi random o vicino a un nodo? 
+
+Applicazioni --> Tutte le reti con rischio di subire danni per individuare i punti critici da 		              andare a rafforzare 
+
+Algoritmo --> Applicare in modo sequenziale vari danni alla rete e valutare nodi / edge di 		          importanza chiave 
+
+Problemi --> Quante prove fare prima che il risultato finale sia soddifacente in termini di 		        accuratezza ?
+	
+Definizione astratta -->
+	Type of graph -->
+		- unweighed 
+		- undirected
+	Damage --> 
+		- remove of nodes (in distant in path vs in short in path vs random)
+		- edges remove ( random vs strictly close to a node vs in sparse node)	Metrics -->
+		- Ranking system of the node
+		- Ranking system of edges (seems unfeasible)
+		- 0% - 100% of perstistance of Network to the damage
+		 
+		

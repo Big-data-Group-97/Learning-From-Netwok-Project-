@@ -1,30 +1,34 @@
 # Plan after porposal submission
 
-## step 0 - Prof Feedback
-Consider prof feedback
-Resources and advice are very welcome
+## Identified problem types
+1. unweighted, directed, changes in shortes path length, removal of node
+  - logistic structures, cost is need to change transport flows
+  - possible relaxing path checks only between `sources` and `consumers`
+  - damage is amount of change in the shortest paths costs
+2. Maximum flow problem, changes of flow, removal of node
+  - infrastructure networks, such as gas, oil, electricity, traffic, more
+  - need definition of producers and consumers
+  - identify critical infrastructure elements for simple logistical networks
+3. unweighted, directed, Motif count change on removal of node
+  - applications in genetic and biological networks
+  - need careful performance considerations
+  - perhaps even consider changes from one mortif to another ?
 
-## step 1 - Problem Identification
-Details matter, give proper definitions
-- graph type and properties
-- metrics of damage
-- type of damage
-No algorithm design, only work on problem identification and definition
-Identify, classify and rank, will have to compare and select best fits for project
-Develop individually first, compare and choose the best candidates later
 
 ## step 2 - Basic Literature Review
+Identify potential preexisting framework to take advantage of, bothb tehoretical and practical
+identify valid datasets, especially small/artifical ones
+Identify preexisting work on the problem definition and algorithms
+
 Consider present literature
 Consult materials that might cover the topic
 - books
 - papers
 - online resources
-- professors advice
-Identify potential preexisting framework to take advantage of
-No need for deep research, just verifying presence or not of preexisting research and taking advantage of common work
+
 The more there is, the less theoretical work we need to do
 Documet all research and sources
-Research individually, compare often and share resources
+Research individually, share resources
 
 ## step 3 - Further Discussion
 When problem definition and literature review complete, meet to discuss future steps

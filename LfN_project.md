@@ -15,28 +15,21 @@
   - perhaps even consider changes from one mortif to another ?
 
 
-## step 2 - Basic Literature Review
-Identify potential preexisting framework to take advantage of, bothb tehoretical and practical
-identify valid datasets, especially small/artifical ones
-Identify preexisting work on the problem definition and algorithms
+## CItations sources 
+good basic paper on node removal on simple networks 
+  https://www.sciencedirect.com/science/article/pii/S037843710400439X
+  https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0059613&type=printable
+too advanced
+  https://www.sciencedirect.com/science/article/pii/S0378437115007037   
+  https://www.sciencedirect.com/science/article/pii/S0378437119306740
+  https://appliednetsci.springeropen.com/articles/10.1007/s41109-018-0089-9#Sec2
+  https://doi.org/10.3390/en15030797
 
-Consider present literature
-Consult materials that might cover the topic
-- books
-- papers
-- online resources
-
-The more there is, the less theoretical work we need to do
-Documet all research and sources
-Research individually, share resources
-
-## step 3 - Further Discussion
-When problem definition and literature review complete, meet to discuss future steps
-- Consider time spent and remaining before midterm 
-- Need to define target problem characteristics and block
-- consider need of more theoretical research
-- Consider talking with the professor
-- potential start of work towards first algorithm designs and implementation
+## step 4 - The book
+ - read chap 8 of [the book](http://www.networksciencebook.com/chapter/8)
+ - define a few basic problems we want to explore from this
+ - code basic example of random attacks on simple graph and simple targeted attacks
+ - 
 
 # Problem definition
  - type of graph

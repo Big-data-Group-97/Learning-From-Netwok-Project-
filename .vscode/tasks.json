@@ -1,0 +1,17 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate PDF",
+            "type": "shell",
+            "command": "pandoc -s -V geometry:margin=1in -o '${relativeFileDirname}/${fileBasenameNoExtension}.pdf' '${relativeFileDirname}/${fileBasename}'",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

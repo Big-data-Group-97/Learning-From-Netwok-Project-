@@ -1,4 +1,7 @@
-### Random attacks
+\newcommand{\braket}[1]{ \langle #1 \rangle}
+
+# Random attacks
+
 Percolation theory is the basis of our analysis.
 Here we'll cover some basic parameters and formulas used in it, in a model for infinite, repeating lattices.
 
@@ -30,21 +33,24 @@ Wikipedia gives a value for tree-like networks $p_{c}={\frac {\langle k\rangle }
 And for Scale Free Models, thus using the Power Law distribution, we have a more complex function, depending also on $\gamma$
 
 $f_c = \begin{cases}
-   1−\frac{1}{\frac{\gamma-2}{3-\gamma}k_{min}^{\gamma-2}k_{max}^{3-\gamma}-1} &\text{if } 2 < \gamma < 3 \\
-   1−\frac{1}{\frac{\gamma-2}{\gamma-3}k_{min}-1} &\text{if } \gamma > 3
+   1-\frac{1}{\frac{\gamma-2}{3-\gamma}k_{min}^{\gamma-2}k_{max}^{3-\gamma}-1} &\text{if } 2 < \gamma < 3 \\
+   1-\frac{1}{\frac{\gamma-2}{\gamma-3}k_{min}-1} &\text{if } \gamma > 3
 \end{cases}$
 
 These values are extremely high for high $\braket{k^2}$ which we expected as scale free networks are quite resilient to random failures due to hubs being major connection points
 
-#### Names 
+## Names 
+
 `power law` - distribution of type $p(x) = a*c^{-x}$
 
 `scale-free networks` - 'real' networks, linked to a Power law distribution for node degree instead of a Poisson of a random network 
 
 `percolation cluster` - huge single cluster that appears after $p_c\le p$
 
-#### Parameters
+## Parameters
+
 **NB**: $\gamma \ne \gamma_p$
+
  - p - probability for link existence
  - $\gamma$ - parameter describing the distribution of node degrees in scale-free/real networks
  - $p_c$ - critical probability from p for percolation cluster
@@ -53,7 +59,9 @@ These values are extremely high for high $\braket{k^2}$ which we expected as sca
  - $\xi$ - Correlation Length: avg distance between members of same cluster
  - $P_{\infty}(f)/P_{\infty}(0)$ Ratio comparing Oder parameter of the original network and after removal of nodes with probability $f$
  - $\braket{k}$ average node degree and its moments
-#### Formulas
+
+## Formulas
+
 $d \thicksim \lvert p-pc \lvert ^{-\gamma_p}$
 
  $p_{\infty}\thicksim(p-pc)^{\beta_p}$
@@ -61,6 +69,7 @@ $d \thicksim \lvert p-pc \lvert ^{-\gamma_p}$
  $\xi\thicksim \lvert p-pc \lvert ^{-\nu}$
 
 ### Tasks 
+
 1. Random network model
    - generate random network
    - compute analytically percolation parameters

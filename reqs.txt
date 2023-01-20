@@ -53,6 +53,7 @@ notebook==6.5.2
 notebook_shim==0.2.2
 numpy==1.24.0
 packaging==22.0
+pandas==1.5.3
 pandocfilters==1.5.0
 parso==0.8.3
 pexpect==4.8.0
@@ -70,6 +71,7 @@ pyparsing==3.0.9
 pyrsistent==0.19.2
 python-dateutil==2.8.2
 python-json-logger==2.0.4
+pytz==2022.7.1
 PyYAML==6.0
 pyzmq==24.0.1
 qtconsole==5.4.0

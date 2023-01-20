@@ -12,6 +12,16 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Generate LaTeX",
+            "type": "shell",
+            "command": "pandoc -s -o '${relativeFileDirname}/${fileBasenameNoExtension}.tex' '${relativeFileDirname}/${fileBasename}' -f markdown+implicit_figures",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         }
     ]
 }

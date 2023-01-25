@@ -77,7 +77,7 @@ This model is a relatively simple and common one, derived in 1959, although it's
 As such, these random networks can be analyzed directly under percolation theory as infinite-dimension lattices, and have well-defined critical exponents.
 Specifically, $\gamma_p$ = 1, $\beta_p$ = 1 and $\nu$ = 1/2.
 
-The Expected threshold we get for random networks is $f_c = 1-\frac{1}{\braket{k}}$. This result comes also from the fact that random networks such as these follow a Poisson distribution for node degrees, which makes the threshold computation easier.
+The Expected threshold we get for random networks is $f_c = 1-\frac{1}{ \langle k \rangle}$. This result comes also from the fact that random networks such as these follow a Poisson distribution for node degrees, which makes the threshold computation easier.
 
 
 ## Impact of random failures

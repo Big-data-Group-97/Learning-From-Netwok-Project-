@@ -161,3 +161,7 @@ cython_debug/
 
 # custom
 ltex*
+*.aux
+*.sync*
+*.fls
+*.fdb_*

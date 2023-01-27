@@ -36,17 +36,30 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Metwork robustness and percolation theory},
+  pdftitle={Network robustness and percolation theory},
   pdfauthor={Spina Lorenzo, Piermarco , Trapanotto Martino},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 
-\title{Metwork robustness and percolation theory}
+\title{Network robustness and percolation theory}
 \author{Spina Lorenzo, Piermarco , Trapanotto Martino}
 \date{October 27, 2022}
 
@@ -116,7 +129,7 @@ changes: The smaller cluster connect and a major network component,
 usually called \emph{percolating cluster}, appears and connects the
 majority of the network.
 
-Here, the reole of the Critical exponents can become much clearer: \[
+Here, the role of the critical exponents can become much clearer: \[
 \begin{aligned}
 d &\thicksim \lvert p-pc \lvert ^{-\gamma_p} \\
 p_{\infty}&\thicksim(p-pc)^{\beta_p} \\
@@ -125,10 +138,17 @@ p_{\infty}&\thicksim(p-pc)^{\beta_p} \\
 \]
 
 These three equations connect our probability \(p\) with the properties:
-- d - Average Cluster Size\\
-- \(P_\infty\) - Order Parameter: probability that single node connects
-to the percolation cluster - \(\xi\) - Correlation Length: average
-distance between members of the same cluster
+
+\begin{itemize}
+\item
+  d - Average Cluster Size
+\item
+  \(P_\infty\) - Order Parameter: probability that single node connects
+  to the percolation cluster
+\item
+  \(\xi\) - Correlation Length: average distance between members of the
+  same cluster
+\end{itemize}
 
 So, the network evolves quickly into a large unified structure when the
 \(p_c\) threshold is crossed.
@@ -194,8 +214,53 @@ easier.
 \hypertarget{impact-of-random-failures}{%
 \subsection{Impact of random failures}\label{impact-of-random-failures}}
 
-{[}create small set of diverse networks compute percolation, show
-results and comment{]}
+Here we give a simple visualization of a randomly generated graph using
+the Erdős--Rényi method. he dotted line gives us the computed critical
+threshold for each network.
+
+\begin{figure}
+\centering
+\includegraphics{./assets/3000_draw.png}
+\caption{Random network of 3000 nodes with \(p\) = 0.1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{./assets/3000_poisson.png}
+\caption{Distribution of node degree}
+\end{figure}
+
+The Distribution follows closely the expected Poisson, and shows that
+the average degree of the nodes is \(\thicksim 300\), in line with our
+expectations. The graph clearly shows a highly connected example, and
+further analysis will consider networks with lower \(p\) values.
+
+\begin{figure}
+\centering
+\includegraphics{assets/random_3000.png}
+\caption{Random network failure curves at 3000 nodes}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{assets/random_7000.png}
+\caption{Random network failure curves at 7000 nodes}
+\end{figure}
+
+These graphs show how the network responds to randomized failures of its
+nodes, up to 99\% of them. We can see that, apart from catastrophic
+failures, the trend is one of high resistance of networks, as long as
+the probability \(p\) is not too low.
+
+Random graphs show themselves to be quite resistant to node failures,
+although under the hypothesis of having enough connections between
+nodes. These extra connections act as a backup for the network, allowing
+it to keep its structure even under heavy failures.
+
+A clear issue with these models is that random graphs are not likely to
+occur in nature or under unconstrained environments, as they often
+display a high degree of redundancy, which raises their cost and lowers
+their efficiency.
 
 \hypertarget{scale-free-networks}{%
 \section{Scale-Free Networks}\label{scale-free-networks}}
@@ -229,6 +294,37 @@ f_c = \begin{cases}
 \hypertarget{impact-of-random-failures-1}{%
 \subsection{Impact of random
 failures}\label{impact-of-random-failures-1}}
+
+These graphs show the properties of the generated Scale Free networks.
+
+The parameter \(\gamma\) is computed using a fit function to get the
+best estimate, and the graphs shows that it maps quite nicely with the
+true distribution of the network.
+
+\includegraphics{./assets/2000_lambda_est.png}
+
+The graph visualization also highlights effectively the major roles of
+some nodes compared to others. The regular structure we saw in the
+random networks is substituted with a strong hierarchy, where a handful
+of nodes have a major role in the network.
+
+\includegraphics{assets/scalefree_draw.png}
+
+Here we execute the same node removal algorithm, graphing also the
+expected threshold of the networks. We slightly different networks to
+get a more general understanding of the problem, alongside different
+network sizes to see if any property emerges.
+
+\includegraphics{./assets/scalefree_2000_random.png}
+\includegraphics{./assets/scalefree_5000_random.png}
+\includegraphics{./assets/scalefree_10000_random.png}
+
+We can observe that the networks are less stable compared to the random
+ones we saw previously, and we can notice major drops in network
+connectivity, likely due to a group of major nodes being removed. The
+network is still relatively stable, as a high percentage of nodes has to
+fail to cause major damage to the graph, and if the major nodes can be
+protected from these failures, we can expect even better performance.
 
 \hypertarget{real-world-networks}{%
 \section{Real world networks}\label{real-world-networks}}

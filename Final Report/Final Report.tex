@@ -5,6 +5,9 @@
 \documentclass[
 ]{article}
 \usepackage{lmodern}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{graphicx}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -190,7 +193,8 @@ In the rest of the work we'll be showing the results of these analyses
 for various types of networks and verifying the theoretical results on
 both artificial and real datasets.
 
-{[}get new page for this{]} \# Random networks
+\hypertarget{random-networks}{%
+\section{Random networks}\label{random-networks}}
 
 The first network we model is an Erdős--Rényi random graph. This model
 has a given number of nodes and edges are connected randomly.
@@ -219,15 +223,17 @@ the Erdős--Rényi method. he dotted line gives us the computed critical
 threshold for each network.
 
 \begin{figure}
-\centering
-\includegraphics{./assets/3000_draw.png}
-\caption{Random network of 3000 nodes with \(p\) = 0.1}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{./assets/3000_poisson.png}
-\caption{Distribution of node degree}
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+  \includegraphics{./assets/3000_draw.png}
+  \caption{Random network of 3000 nodes with \(p\) = 0.1}
+  \end{subfigure}
+  \hfill  
+  \begin{subfigure}{0.4\textwidth}
+  \centering
+  \includegraphics{./assets/3000_poisson.png}
+  \caption{Distribution of node degree}
+  \end{subfigure}
 \end{figure}
 
 The Distribution follows closely the expected Poisson, and shows that
@@ -236,15 +242,17 @@ expectations. The graph clearly shows a highly connected example, and
 further analysis will consider networks with lower \(p\) values.
 
 \begin{figure}
-\centering
-\includegraphics{assets/random_3000.png}
-\caption{Random network failure curves at 3000 nodes}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{assets/random_7000.png}
-\caption{Random network failure curves at 7000 nodes}
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics{assets/random_3000.png}
+    \caption{Random network failure curves at 3000 nodes}
+  \end{subfigure}
+  \hfill
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics{assets/random_7000.png}
+    \caption{Random network failure curves at 7000 nodes}
+  \end{subfigure}
 \end{figure}
 
 These graphs show how the network responds to randomized failures of its
@@ -301,23 +309,39 @@ The parameter \(\gamma\) is computed using a fit function to get the
 best estimate, and the graphs shows that it maps quite nicely with the
 true distribution of the network.
 
-\includegraphics{./assets/2000_lambda_est.png}
+\begin{figure}
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics{./assets/2000_lambda_est.png}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics{assets/scalefree_draw.png}
+  \end{subfigure}
+\end{figure}
 
 The graph visualization also highlights effectively the major roles of
 some nodes compared to others. The regular structure we saw in the
 random networks is substituted with a strong hierarchy, where a handful
 of nodes have a major role in the network.
 
-\includegraphics{assets/scalefree_draw.png}
 
 Here we execute the same node removal algorithm, graphing also the
 expected threshold of the networks. We slightly different networks to
 get a more general understanding of the problem, alongside different
 network sizes to see if any property emerges.
 
-\includegraphics{./assets/scalefree_2000_random.png}
-\includegraphics{./assets/scalefree_5000_random.png}
-\includegraphics{./assets/scalefree_10000_random.png}
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics{./assets/scalefree_2000_random.png}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics{./assets/scalefree_5000_random.png}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \includegraphics{./assets/scalefree_10000_random.png}
+  \end{subfigure}
+\end{figure}
 
 We can observe that the networks are less stable compared to the random
 ones we saw previously, and we can notice major drops in network
@@ -328,6 +352,41 @@ protected from these failures, we can expect even better performance.
 
 \hypertarget{real-world-networks}{%
 \section{Real world networks}\label{real-world-networks}}
+
+
+\begin{wrapfigure}{R}{0.4\textwidth}
+  \centering
+  \includegraphics[width=0.4\textwidth]{assets/internet_pl_fit.png}
+  \caption{Power Law fit over Topology dataset}
+\end{wrapfigure}
+
+As we discussed, the Scale free model resembles much more closely real
+world networks, where edges are not simply random, but efficiency is key
+and hierarchies are common.
+
+As a model, we decided to use a relatively small internet topology
+network, of size \(n = 34761\), obtained from
+\href{http://konect.cc/networks/topology/}{konnect}, originally produced
+by the \href{http://irl.cs.ucla.edu/}{Internet Research Laboratory, at
+UCLA}. The page details many of the network properties, including the
+value of the power law exponent at \(\gamma = 2.32\)
+
+
+\hypertarget{impacts-of-random-failures}{%
+\subsection{Impacts of random
+failures}\label{impacts-of-random-failures}}
+
+
+\begin{wrapfigure}{R}{0.4\textwidth}
+  \centering
+  \includegraphics{assets/internet_random_fail_2.png}
+  \caption{Internet topology network response to randomized failures}
+\end{wrapfigure}
+
+The network shows similar behaviors to its artificial counterparts,
+showing good resistance to randomized failures, as most nodes of the
+network are inconsequential to the larger connected components. The
+computed critical threshold seems also reasonable, reaching into 99\%.
 
 \hypertarget{targeted-failures}{%
 \section{Targeted failures}\label{targeted-failures}}

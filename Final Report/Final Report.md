@@ -70,7 +70,6 @@ The last component to introduce is the distribution $k$ of the degrees of the no
 In the rest of the work we'll be showing the results of these analyses for various types of networks and verifying the theoretical results on both artificial and real datasets.
 
 
-[get new page for this]
 # Random networks
 
 The first network we model is an Erdős–Rényi random graph. This model has a given number of nodes and edges are connected randomly. 
@@ -142,6 +141,21 @@ Here we execute the same node removal algorithm, graphing also the expected thre
 We can observe that the networks are less stable compared to the random ones we saw previously, and we can notice major drops in network connectivity, likely due to a group of major nodes being removed. The network is still relatively stable, as a high percentage of nodes has to fail to cause major damage to the graph, and if the major nodes can be protected from these failures, we can expect even better performance.
 
 # Real world networks
+
+As we discussed, the Scale free model resembles much more closely real world networks, where edges are not simply random, but efficiency is key and hierarchies are common.
+
+As a model, we decided to use a relatively small internet topology network, of size $n = 34761$, obtained from [konnect](http://konect.cc/networks/topology/), originally produced by the [Internet Research Laboratory, at UCLA](http://irl.cs.ucla.edu/). The page details many of the network properties, including the value of the power law exponent at $\gamma = 2.32$
+
+![Power Law fit over Topology dataset](assets/internet_pl_fit.png)
+
+
+
+## Impacts of random failures
+
+![Internet topology network response to randomized failures](assets/internet_random_fail_2.png)
+
+The network shows similar behaviors to its artificial counterparts, showing good resistance to randomized failures, as most nodes of the network are inconsequential to the larger connected components. The computed critical threshold seems also reasonable, reaching into 99%.
+
 
 # Targeted failures
 

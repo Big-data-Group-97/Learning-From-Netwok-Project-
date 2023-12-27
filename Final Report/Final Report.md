@@ -1,6 +1,6 @@
 ---
 title: Network robustness and percolation theory
-author: Spina Lorenzo, Piermarco , Trapanotto Martino
+author: Spina Lorenzo, Piermarco Giustini, Trapanotto Martino
 date: October 27, 2022
 ---
 # Introduction
